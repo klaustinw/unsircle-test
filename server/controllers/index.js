@@ -101,7 +101,7 @@ module.exports = class Controller {
       }
     } catch (error) {
       res.status(500).json({
-        error: "Unable to add user"
+        error: "Unable to delete user"
       });
       
       console.log(error);

@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": 123,
-    "database": "unsircle_test25",
+    "database": "unsircle_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
