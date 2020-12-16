@@ -24,7 +24,7 @@ module.exports = class Controller {
 
   static async get_users(_, res) {
     try {
-      const users = await User.findAll();
+      const users = await User.findAll({ include: [Policy] });
 
       res.status(200).json(users);
     } catch (error) {
@@ -124,7 +124,7 @@ module.exports = class Controller {
             id: user.id
           }, process.env.SECRET);
 
-          res.status(200).json({ access_token: token });
+          res.status(200).json({ access_token: token, username: user.username, id: user.id });
         } else {
           res.status(401).json({ msg: 'Wrong username/password' });
         }
